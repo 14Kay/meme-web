@@ -1,0 +1,14 @@
+{
+	"abc123": {
+		"name": "示例群",
+		"description": "示例群大佬们的日常",
+		"createdAt": "2024-01-01",
+		"updatedAt": "2024-03-16"
+	},
+	"def456": {
+		"name": "另一个群",
+		"description": "另一个群大佬们的日常",
+		"createdAt": "2024-02-01",
+		"updatedAt": "2024-03-16"
+	}
+}
