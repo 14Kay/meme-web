@@ -6,7 +6,7 @@ export default function Home() {
 					<span className="text-2xl font-black text-white dark:text-neutral-900">M</span>
 				</div>
 				<h1 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-					Meme Gallery
+					QQ Group Meme Gallery
 				</h1>
 				<p className="mt-3 text-sm text-neutral-400">
 					通过专属链接访问你的图集

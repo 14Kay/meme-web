@@ -31,7 +31,7 @@ importers:
         specifier: ^4
         version: 4.2.1
       '@types/node':
-        specifier: ^20
+        specifier: ^20.19.37
         version: 20.19.37
       '@types/react':
         specifier: ^19
@@ -678,9 +678,6 @@ packages:
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
-
-  '@types/esrecurse@4.3.1':
-    resolution: {integrity: sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -1469,10 +1466,6 @@ packages:
     resolution: {integrity: sha512-sNXOfKCn74rt8RICKMvJS7XKV/Xk9kA7DyJr8mJik3S7Cwgy3qlkkmyS2uQB3jiJg6VNdZd/pDBJu0nvG2NlTg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  eslint-scope@9.1.2:
-    resolution: {integrity: sha512-xS90H51cKw0jltxmvmHy2Iai1LIqrfbw57b79w/J7MfvDfkIkFZ+kj6zC3BjtUwh150HsSSdxXZcsuv72miDFQ==}
-    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
-
   eslint-visitor-keys@3.4.3:
     resolution: {integrity: sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1638,10 +1631,6 @@ packages:
 
   globals@16.4.0:
     resolution: {integrity: sha512-ob/2LcVVaVGCYN+r14cnwnoDPUufjiYgSqRhiFD0Q1iI4Odora5RE8Iv1D24hAz5oMophRGkGz+yuvQmmUMnMw==}
-    engines: {node: '>=18'}
-
-  globals@16.5.0:
-    resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
     engines: {node: '>=18'}
 
   globals@17.4.0:
@@ -3310,8 +3299,6 @@ snapshots:
     dependencies:
       '@types/ms': 2.1.0
 
-  '@types/esrecurse@4.3.1': {}
-
   '@types/estree@1.0.8': {}
 
   '@types/json-schema@7.0.15': {}
@@ -4234,7 +4221,7 @@ snapshots:
       core-js-compat: 3.48.0
       eslint: 9.39.4(jiti@2.6.1)
       find-up-simple: 1.0.1
-      globals: 16.5.0
+      globals: 16.4.0
       indent-string: 5.0.0
       is-builtin-module: 5.0.0
       jsesc: 3.1.0
@@ -4285,13 +4272,6 @@ snapshots:
 
   eslint-scope@8.4.0:
     dependencies:
-      esrecurse: 4.3.0
-      estraverse: 5.3.0
-
-  eslint-scope@9.1.2:
-    dependencies:
-      '@types/esrecurse': 4.3.1
-      '@types/estree': 1.0.8
       esrecurse: 4.3.0
       estraverse: 5.3.0
 
@@ -4484,8 +4464,6 @@ snapshots:
   globals@15.15.0: {}
 
   globals@16.4.0: {}
-
-  globals@16.5.0: {}
 
   globals@17.4.0: {}
 
@@ -5793,9 +5771,9 @@ snapshots:
     dependencies:
       debug: 4.4.3
       eslint: 9.39.4(jiti@2.6.1)
-      eslint-scope: 9.1.2
+      eslint-scope: 8.4.0
       eslint-visitor-keys: 5.0.1
-      espree: 11.2.0
+      espree: 10.4.0
       esquery: 1.7.0
       semver: 7.7.4
     transitivePeerDependencies:

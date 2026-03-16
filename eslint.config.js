@@ -18,6 +18,8 @@ export default eslint(
 			'no-new': 'off',
 			'no-case-declarations': 'off',
 			'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+			'@stylistic/jsx-indent-props': ['error', 'tab'],
+			'@stylistic/indent': ['error', 'tab'],
 		},
 	},
 )

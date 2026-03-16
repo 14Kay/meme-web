@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
-import { getHashFolders, getImagesInFolder, getHashMeta } from '@/lib/images'
-import MasonryGrid from '@/components/MasonryGrid'
+import MasonryGridClient from '@/components/MasonryGridClient'
+import { getHashFolders, getHashMeta, getImagesInFolder } from '@/lib/images'
 
 export async function generateStaticParams() {
 	return getHashFolders().map(hash => ({ hash }))
@@ -13,26 +13,23 @@ export default async function HashPage({
 }) {
 	const { hash } = await params
 	const images = getImagesInFolder(hash)
-	if (images.length === 0) notFound()
+	if (images.length === 0)
+		notFound()
 
 	const meta = getHashMeta(hash)
 	const name = meta?.name ?? hash
-	const description = meta
-		? `${meta.description}，目前已有 ${images.length} 张。`
-		: `目前已有 ${images.length} 张。`
 
 	return (
 		<div className="min-h-screen bg-white dark:bg-neutral-950">
-			<main className="mx-auto max-w-7xl px-4 sm:px-6">
-				<div className="py-10 sm:py-14">
-					<h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
-						{name} <span className="text-neutral-400 dark:text-neutral-500">梗</span>
+			<main className="mx-auto max-w-6xl px-4 sm:px-6">
+				<div className="py-14 pb-10 sm:py-24 sm:pb-16">
+					<h1 className="text-4xl font-bold tracking-tight text-neutral-950 dark:text-white sm:text-[2.5rem]">
+						{name}
+						{' '}
+						<span style={{ color: '#6430d6' }}>梗图</span>
 					</h1>
-					<p className="mt-3 text-base text-neutral-500 dark:text-neutral-400">
-						{description}
-					</p>
 				</div>
-				<MasonryGrid images={images} />
+				<MasonryGridClient images={images} name={name} />
 				<div className="h-12" />
 			</main>
 		</div>

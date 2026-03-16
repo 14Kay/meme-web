@@ -1,5 +1,6 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
+import process from 'node:process'
 
 export interface MemeImage {
 	filename: string
@@ -9,7 +10,6 @@ export interface MemeImage {
 
 export interface HashMeta {
 	name: string
-	description: string
 	createdAt: string
 	updatedAt: string
 }
@@ -17,7 +17,8 @@ export interface HashMeta {
 const memesDir = path.join(process.cwd(), 'public', 'memes')
 
 export function getHashFolders(): string[] {
-	if (!fs.existsSync(memesDir)) return []
+	if (!fs.existsSync(memesDir))
+		return []
 	return fs
 		.readdirSync(memesDir, { withFileTypes: true })
 		.filter(d => d.isDirectory())
@@ -26,7 +27,8 @@ export function getHashFolders(): string[] {
 
 export function getImagesInFolder(hash: string): MemeImage[] {
 	const folderPath = path.join(memesDir, hash)
-	if (!fs.existsSync(folderPath)) return []
+	if (!fs.existsSync(folderPath))
+		return []
 
 	const exts = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif'])
 	return fs
@@ -41,7 +43,8 @@ export function getImagesInFolder(hash: string): MemeImage[] {
 
 export function getHashMeta(hash: string): HashMeta | null {
 	const metaPath = path.join(memesDir, 'meta.json')
-	if (!fs.existsSync(metaPath)) return null
+	if (!fs.existsSync(metaPath))
+		return null
 	try {
 		const data = JSON.parse(fs.readFileSync(metaPath, 'utf-8'))
 		return data[hash] ?? null
